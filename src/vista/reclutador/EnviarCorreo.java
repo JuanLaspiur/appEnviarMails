@@ -156,6 +156,7 @@ public class EnviarCorreo extends javax.swing.JInternalFrame {
         label_archivosAdjuntos = new javax.swing.JLabel();
         btn_archivosAdjuntos = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -196,6 +197,13 @@ public class EnviarCorreo extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton4.setText("MSJ Predeterminado");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -205,13 +213,14 @@ public class EnviarCorreo extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btn_enviar)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(input_asunto, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
@@ -245,16 +254,17 @@ public class EnviarCorreo extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_enviar)
-                        .addGap(29, 29, 29))
+                        .addComponent(btn_enviar))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btn_archivosAdjuntos)
                         .addGap(18, 18, 18)
-                        .addComponent(label_archivosAdjuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(label_archivosAdjuntos, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)))
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -290,6 +300,15 @@ public class EnviarCorreo extends javax.swing.JInternalFrame {
         desktop.moveToFront(pagina1);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       input_mensaje.setText("");
+       input_mensaje.setText("¡Hola [Nombre del destinatario]!\n" +
+"\n" +
+"Espero que este mensaje te encuentre bien. Mi nombre es [Tu Nombre] y me dirijo a ti con el objetivo de expresar mi interés en la posición de desarrollador web Java en [Nombre de la empresa o proyecto]. Después de haber investigado sobre su empresa y sus proyectos, estoy convencido de que mi experiencia y habilidades pueden aportar significativamente al equipo.");
+       
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_archivosAdjuntos;
@@ -297,9 +316,8 @@ public class EnviarCorreo extends javax.swing.JInternalFrame {
     private javax.swing.JTextField input_asunto;
     private javax.swing.JTextField input_enviarA;
     private javax.swing.JTextPane input_mensaje;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

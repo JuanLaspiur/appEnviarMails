@@ -40,6 +40,10 @@ public class ListaDeReclutadores extends javax.swing.JInternalFrame {
         btnEliminar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        ComboBoxBuscar = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        btn_buscar = new javax.swing.JButton();
+        input_buscar = new javax.swing.JTextField();
 
         setClosable(true);
 
@@ -56,6 +60,7 @@ public class ListaDeReclutadores extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Lista de Reclutadores");
 
         btnEliminar.setText("Eliminar");
@@ -79,6 +84,23 @@ public class ListaDeReclutadores extends javax.swing.JInternalFrame {
             }
         });
 
+        ComboBoxBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID", "nombre" }));
+
+        jLabel2.setText("Buscar por");
+
+        btn_buscar.setText("Buscar");
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
+
+        input_buscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                input_buscarKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,36 +108,49 @@ public class ListaDeReclutadores extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(435, 435, 435)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEliminar)
-                            .addComponent(jButton2))))
-                .addContainerGap(13, Short.MAX_VALUE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ComboBoxBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(input_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_buscar)))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(227, 227, 227)
+                .addComponent(btnEliminar)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton3)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboBoxBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(btn_buscar)
+                    .addComponent(input_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -185,12 +220,64 @@ public class ListaDeReclutadores extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+      String comboSeleccionado = (String)ComboBoxBuscar.getSelectedItem();
+      vaciarTabla();
+      ArrayList<Reclutador> lista = new ArrayList<Reclutador>();
+      
+      if(comboSeleccionado.equals("ID")){
+         lista = new ArrayList<Reclutador>();
+         try{
+         int id = Integer.parseInt(input_buscar.getText());
+         lista.add(ReclutadorData.reclutador(id));
+         }catch(Exception ex){
+          JOptionPane.showMessageDialog(rootPane, "Solo valores numericos para el ID");         
+         }
+      }else{
+         String nombre = input_buscar.getText(); 
+         lista = cargarTablaPorNombre(nombre);
+      }  
+      cargarTabla(lista);
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void input_buscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_input_buscarKeyTyped
+      vaciarTabla();
+      String textoVacio = input_buscar.getText();
+      if(textoVacio.equals("")||textoVacio.equals(" ")){
+           cargarTabla(ReclutadorData.listaDeReclutadores());
+      }  
+        
+        
+    }//GEN-LAST:event_input_buscarKeyTyped
+
+    
+    private ArrayList<Reclutador> cargarTablaPorNombre(String nombre){
+     ArrayList<Reclutador> lista = new ArrayList<Reclutador>();
+     ArrayList<Reclutador> listaCompleta = ReclutadorData.listaDeReclutadores();
+     
+        for (Reclutador reclutador : listaCompleta) {
+            if(reclutador.getNombre().toUpperCase().contains(nombre.toUpperCase())){
+                lista.add(reclutador);            
+            }
+        }
+     return lista;
+    }
+    
+    
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboBoxBuscar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btn_buscar;
+    private javax.swing.JTextField input_buscar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables

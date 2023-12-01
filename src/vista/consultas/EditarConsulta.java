@@ -152,7 +152,7 @@ private Consulta consulta;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
-        Consulta consultaActualizada = new Consulta(consulta.getId(), consulta.getReclutador(), consulta.getFecha(),fusionarSinRepeticiones(input_mensaje.getText(),consulta.getMensaje()));
+        Consulta consultaActualizada = new Consulta(consulta.getId(), consulta.getReclutador(), consulta.getFecha(),fusionarSinRepeticiones(consulta.getMensaje(),input_mensaje.getText()));
         ConsultaData.modificarConsulta(consultaActualizada);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -176,7 +176,7 @@ private Consulta consulta;
 
 public static String fusionarSinRepeticiones(String cadena1, String cadena2) {
         // Eliminar duplicados y fusionar las cadenas
-              LocalDate fechaLocal = LocalDate.now();
+        LocalDate fechaLocal = LocalDate.now();
         String resultado = cadena1 + "\n \n  Aquí la correspondencia fue modificada el día: "+java.sql.Date.valueOf(fechaLocal)+": \n"+ cadena2;
 
         return resultado;
